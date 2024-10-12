@@ -18,14 +18,8 @@ const path = require('path');
 
 
 
-const corsOptions = {
-    origin: 'https://60-maktabsinf.netlify.app', // Faqat shu URL ruxsat etilgan
-  // kerakli HTTP metodlar
-   // ruxsat etilgan headerlar
-};
 
-
-app.use(cors(corsOptions)); // CORSni sozlash
+app.use(cors()); // CORSni sozlash
 
 app.use(express.static(path.join(__dirname, 'uploads')));
 
