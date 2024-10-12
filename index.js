@@ -22,7 +22,7 @@ const path = require('path');
 
 app.use(express.json());
 const corsOptions = {
-    origin: 'https://example.com',
+    origin: 'https://sinfbackend2.onrender.com',
     methods: 'GET,POST, PUT, DELETE', // faqat GET va POST metodlariga ruxsat
     allowedHeaders: ['Content-Type', 'Authorization'], // faqat ma'lum headerlarga ruxsat
   };
