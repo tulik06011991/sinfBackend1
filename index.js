@@ -29,6 +29,8 @@ app.use(cors({
 // app.use(cors(corsOptions));
 
 app.use(express.static(path.join(__dirname, 'uploads')));
+app.use(express.json());
+
 
 // Routes
 app.use('/api',  questionRoutes)
