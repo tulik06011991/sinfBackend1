@@ -21,7 +21,14 @@ const path = require('path');
 
 
 app.use(express.json());
-app.use(cors())
+const corsOptions = {
+    origin: 'https://example.com',
+    methods: 'GET,POST, PUT, DELETE', // faqat GET va POST metodlariga ruxsat
+    allowedHeaders: ['Content-Type', 'Authorization'], // faqat ma'lum headerlarga ruxsat
+  };
+  
+  app.use(cors(corsOptions));
+  
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 // Routes
