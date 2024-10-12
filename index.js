@@ -20,7 +20,7 @@ const path = require('path');
 
 const corsOptions = {
     origin: 'https://60-maktabsinf.netlify.app', // Faqat shu URL ruxsat etilgan
-    methods: 'GET, POST, PUT, DELETE', // kerakli HTTP metodlar
+  // kerakli HTTP metodlar
    // ruxsat etilgan headerlar
 };
 
