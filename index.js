@@ -21,7 +21,7 @@ const path = require('path');
 
 // Ruxsat etilgan domenlar ro'yxati
 app.use(cors({
-    origin: 'https://60-maktabsinfimiz.netlify.app', // Frontend domeni yoki porti
+    origin: 'https://60-maktabsinfim.netlify.app', // Frontend domeni yoki porti
     credentials: true,
   }));
 
