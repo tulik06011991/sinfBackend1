@@ -4,10 +4,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const questionRoutes = require('./routes/faylYuklashRoute');
 const quizRoutes = require('./routes/savollar');
-const admin = require('./routes/adminlar')
-const admins = require('./routes/adminlar') 
-const adminPut = require('./routes/adminlar') 
-const adminDel = require('./routes/adminlar') 
+const adminRoutes = require('./routes/adminlar')
+
 const fanlar2 = require('./routes/fanlar2')
 const fanOlish = require('./routes/fanlarOlish')
 const auth  = require('./routes/auth')
@@ -32,10 +30,8 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 // Routes
 app.use('/api', questionRoutes)
 app.use('/api', quizRoutes);
-app.use('/api',  admin);
-app.use('/api',  admins)
-app.use('/api',  adminPut)
-app.use('/api',  adminDel)
+app.use('/api',  adminRoutes);
+
 app.use('/api', fanlar2)
 app.use('/api', fanOlish)
 app.use('/api', auth)
