@@ -22,7 +22,7 @@ const path = require('path');
 
 app.use(express.json());
 const corsOptions = {
-    origin: 'https://sinfbackend2.onrender.com',
+    origin: 'https://60-maktabsinf.netlify.app/',
     methods: 'GET,POST, PUT, DELETE', // faqat GET va POST metodlariga ruxsat
     allowedHeaders: ['Content-Type', 'Authorization'], // faqat ma'lum headerlarga ruxsat
   };
