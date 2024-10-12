@@ -7,7 +7,7 @@ const middleware = require('../middleware/middleware') // Fan controllerini chaq
 router.post('/create', middleware, subjectController.createSubject);
 
 // Barcha fanlarni olish
-router.get('/subjects', middleware,  subjectController.getAllSubjects);
+router.get('/subjects', subjectController.getAllSubjects);
 
 // Fan o'chirish (faqat admin uchun)
 router.delete('/:id',  middleware, subjectController.deleteSubject)
