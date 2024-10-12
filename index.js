@@ -19,7 +19,25 @@ const path = require('path');
 
 
 
-app.use(cors()); // CORSni sozlash
+// Ruxsat etilgan domenlar ro'yxati
+const allowedDomains = ['https://60-maktabsinfimiz.netlify.app', ];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedDomains.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Faqat kerakli metodlarga ruxsat
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Faqat kerakli sarlavhalar
+  credentials: true,  // Agar kerak bo'lsa cookie va authorization uchun
+//   optionsSuccessStatus: 200  // Ba'zi eski brauzerlarda CORS uchun 204'ni qabul qilmaslik uchun
+};
+
+// CORS middleware'ni qo'llash
+app.use(cors(corsOptions));
 
 app.use(express.static(path.join(__dirname, 'uploads')));
 
