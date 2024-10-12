@@ -24,20 +24,31 @@ const privateCorsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization'], // maxsus 'Authorization' talab qilinadi
 };
 
+const publicCorsOptions = {
+    origin: 'https://60-maktabsinf.netlify.app',
+    methods: 'GET, POST DELETE',
+    allowedHeaders: ['Content-Type'], // faqat 'Content-Type'ga ruxsat beriladi
+};
+
+const oson = {
+    origin: 'https://60-maktabsinf.netlify.app',
+    methods: ' POST',
+    // faqat 'Content-Type'ga ruxsat beriladi
+};
 
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-app.use('/api', questionRoutes)
-app.use('/api', quizRoutes);
+app.use('/api', cors(publicCorsOptions), questionRoutes)
+app.use('/api', cors(publicCorsOptions), quizRoutes);
 app.use('/api', cors(privateCorsOptions), adminRoutes);
 
-app.use('/api', fanlar2)
-app.use('/api', fanOlish)
-app.use('/api', auth)
-app.use('/api', javob)
-app.use('/admin', adminFan)
-app.use('/admin', hammasi)
+app.use('/api', cors(publicCorsOptions), fanlar2)
+app.use('/api', cors(publicCorsOptions), fanOlish)
+app.use('/api', cors(oson), auth)
+app.use('/api', cors(publicCorsOptions), javob)
+app.use('/admin', cors(publicCorsOptions), adminFan)
+app.use('/admin', cors(publicCorsOptions), hammasi)
 // MongoDB ga ulanish
 const connectDB = async () => {
     try {
