@@ -19,7 +19,7 @@ const path = require('path');
 
 
 const corsOptions = {
-    origin: 'https://60-maktabsinfimiz.netlify.app', // Ortiqcha / olib tashlandi
+    origin: 'https://60-maktabsinf.netlify.app', // Ortiqcha / olib tashlandi
     methods: 'GET, POST, PUT, DELETE', // kerakli metodlar
     allowedHeaders: ['Content-Type', 'Authorization'], 
 };
