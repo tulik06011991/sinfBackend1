@@ -20,15 +20,13 @@ const path = require('path');
 
 
 
-app.use(express.json());
 const corsOptions = {
-    origin: 'https://60-maktabsinf.netlify.app/',
-    methods: 'GET,POST, PUT, DELETE', // faqat GET va POST metodlariga ruxsat
-    allowedHeaders: ['Content-Type', 'Authorization'], // faqat ma'lum headerlarga ruxsat
-  };
-  
-  app.use(cors(corsOptions));
-  
+    origin: 'https://60-maktabsinfimiz.netlify.app', // Ortiqcha / olib tashlandi
+    methods: 'GET, POST, PUT, DELETE', // kerakli metodlar
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+};
+app.use(cors(corsOptions));
+
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 // Routes
@@ -62,3 +60,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
