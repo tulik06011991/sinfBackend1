@@ -5,6 +5,6 @@ const { getSubjects } = require('../admin/FanlarniOlish');
 // Barcha fanlarni yoki adminId bo'yicha fanlarni olish
 // router.get('/subjects', getSubjects);
 
-router.post('/subjects', getSubjects);// adminId ixtiyoriy
+router.get('/subjects', getSubjects);// adminId ixtiyoriy
 
 module.exports = router;
