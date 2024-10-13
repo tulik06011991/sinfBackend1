@@ -3,13 +3,14 @@ const Admin = require('../Model/adminlar'); // Admin modelini import qilamiz
 
 // Fanlar ro'yxatini olish va fanId bo'yicha filtrlash
 const getSubjects = async (req, res) => {
-  const { fanId } = req.params; // Paramsdan fanId ni olamiz
+  const { id } = req.params // Paramsdan fanId ni olamiz
+// console.log(id)
 
   try {
     let subjects;
-    if (fanId) {
+    if (id) {
       // fanId bo'yicha fanlarni olamiz
-      subjects = await Subject.find({ _id: fanId }).select('name'); // Faqat fan nomini olamiz
+      subjects = await Subject.find({ _id: id }).select('name'); // Faqat fan nomini olamiz
     } else {
       return res.status(400).json({ message: 'FanId berilmagan!' });
     }
