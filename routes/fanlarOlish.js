@@ -7,6 +7,6 @@ const middleware = require('../middleware/middleware')
 // router.get('/subjects', getAllSubjects);
 router.get('/subject', getSubject);
 
-router.post('/subjects/:fanId', getSubjects);// adminId ixtiyoriy
+router.get('/subjects/:fanId', getSubjects);// adminId ixtiyoriy
 
 module.exports = router;
