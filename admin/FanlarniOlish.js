@@ -3,7 +3,7 @@ const Admin = require('../Model/adminlar'); // Admin modelini import qilamiz
 
 // Fanlar ro'yxatini olish va fanId bo'yicha filtrlash
 const getSubjects = async (req, res) => {
-  const { id } = req.params 
+  const id  = req.body
   
 
   try {
